@@ -1,12 +1,20 @@
 <template>
   <div class="layout">
-    <router-view />
+    <navigation-bar v-if="isLoggedIn && user" />
+    <top-navigation v-if="isLoggedIn && user" :user="user"/>
+    <router-view :user="user" />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import NavigationBar from "@/components/NavigationBar";
+import TopNavigation from './components/TopNavigation.vue';
 export default {
+  components: {
+    NavigationBar,
+    TopNavigation
+  },
   computed: {
     ...mapGetters(["isLoggedIn"]),
     ...mapActions(["getProfile"]),
