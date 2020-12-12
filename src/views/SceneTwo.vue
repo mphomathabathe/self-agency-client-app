@@ -35,374 +35,82 @@
           </div>
         </div>
         <div class="chat-content px-lg-8">
-          <div class="container-xxl py-6 py-lg-10" v-if="QuestionOne">
-            <div class="message">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-                <img
-                  class="avatar-img"
-                  src="assets/images/chatbot.png"
-                  alt=""
-                />
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">Chatbot</h6>
-                      <div>
-                        Hi {{ user.firstName }} start your journey by choosing
-                        your topic of interest. Then follow and engage with the
-                        narrative in a manner that resembles the decisions you
-                        would have made in reality
-                      </div>
-
-                      <div class="mt-1">
-                        <small class="opacity-65">1 min ago</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="message message-right">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center justify-content-end">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">Choose Topic of Interest</h6>
-                      <a href="#" @click="chooseInterest()">
-                        1. Risky Behaviours
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Divider -->
-            <div class="message-divider my-9 mx-lg-5">
+          <div class="container-xxl py-6 py-lg-10" v-if="Welcome">
+            <div class="container my-9 mx-lg-5">
               <div class="row align-items-center">
-                <div class="col">
-                  <hr />
+                <div class="avatar avatar-xl mb-5">
+                  <lottie-animation
+                    path="assets/lottie/phone.json"
+                    class="avatar-img"
+                  />
                 </div>
-
-                <div class="col-auto"></div>
-
-                <div class="col">
-                  <hr />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container-xxl py-6 py-lg-10" v-if="QuestionTwo">
-            <div class="message">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-                <img
-                  class="avatar-img"
-                  src="assets/images/happiness.png"
-                  alt=""
-                />
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">{{ user.firstName }}</h6>
-                      <div>
-                        Hi mom
-                      </div>
-
-                      <div class="mt-1">
-                        <small class="opacity-65">1 min ago</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="message message-right">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-                <img class="avatar-img" src="assets/images/mom.png" alt="" />
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center justify-content-end">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">Mom</h6>
-                      <a href="#" @click="chooseInterest()">
-                        Afternoon {{ user.firstName }}. How was school?
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Divider -->
-            <!-- Divider -->
-            <div class="message-divider my-9 mx-lg-5">
-              <div class="row align-items-center">
                 <div class="col">
                   <hr />
                 </div>
 
                 <div class="col-auto">
-                  <small class="text-muted"
-                    >{{ user.firstName }} rushes to her bedroom and mumbling the
-                    answer to avoid mom’s question</small
-                  >
+                  <small class="text-muted text-center"
+                    >Phone is ringing, pick up your phone
+                  </small>
                 </div>
 
                 <div class="col">
                   <hr />
-                </div>
-              </div>
-              <a
-                href="#"
-                @click="GoQuestionThree()"
-                class="btn btn-primary text-center"
-                >Contiune</a
-              >
-            </div>
-          </div>
-          <div class="container-xxl py-6 py-lg-10" v-if="QuestionThree">
-            <div class="message">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-                <img class="avatar-img" src="assets/images/mom.png" alt="" />
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">Mom</h6>
-                      <div>
-                        {{ user.firstName }} comeback here! Is that that the
-                        smell of cigarettes that I’m smelling from you?
-                      </div>
-
-                      <div class="mt-1">
-                        <small class="opacity-65">1 min ago</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="message-divider my-9 mx-lg-5">
-              <div class="row align-items-center">
-                <div class="col">
-                  <hr />
-                </div>
-
-                <div class="col-auto">
-                  <small class="text-muted"
-                    >What is your response? Choose one option</small
-                  >
-                </div>
-
-                <div class="col">
-                  <hr />
-                </div>
-              </div>
-            </div>
-            <div class="message message-right">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center justify-content-end">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">Option A</h6>
-                      <a href="#" @click="QuestionThreeResponse('Option A')">
-                        No mom it’s nothing really, I was in a crowded place on
-                        my way back and some people must have been smoking
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="message message-right">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center justify-content-end">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">Option B</h6>
-                      <a href="#" @click="QuestionThreeResponse('Option B')">
-                        Kind of… It’s just that I’ve been really stressed, and a
-                        friend told me that smoking will help calm me down.
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Divider -->
-            <div class="message-divider my-9 mx-lg-5">
-              <div class="row align-items-center">
-                <div class="col">
-                  <hr />
-                </div>
-
-                <div class="col-auto"></div>
-
-                <div class="col">
-                  <hr />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container-xxl py-6 py-lg-10" v-if="ThreeResponse">
-            <div class="message">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-                <img class="avatar-img" src="assets/images/mom.png" alt="" />
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">Mom</h6>
-                      <div>
-                        {{ ThreeResponse }}
-                      </div>
-
-                      <div class="mt-1">
-                        <small class="opacity-65">1 min ago</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="message-divider my-9 mx-lg-5">
-              <div class="row align-items-center">
-                <div class="col">
-                  <hr />
-                </div>
-
-                <div class="col-auto">
-                  <small class="text-muted"
-                    >{{ user.firstName }} fiddles with hands</small
-                  >
-                </div>
-
-                <div class="col">
-                  <hr />
-                </div>
-              </div>
-            </div>
-            <div class="message">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-                <img class="avatar-img" src="assets/images/mom.png" alt="" />
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">Mom</h6>
-                      <div>
-                        What’s this I’m hearing about you failing grade 11?
-                      </div>
-
-                      <div class="mt-1">
-                        <small class="opacity-65">1 min ago</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="message message-right">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-                <img
-                  class="avatar-img"
-                  src="assets/images/happiness.png"
-                  alt=""
-                />
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center justify-content-end">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">{{ user.firstName }}</h6>
-                      <a href="#">
-                        I don’t know what you are talking about mom.
-                      </a>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
             <a
-              href="#"
-              @click="GoQuestionFour()"
+              @click="GoToConverstaion()"
               class="btn btn-primary mt-2 text-center"
-              >Continue</a
+              >Pick up the phone</a
             >
           </div>
-          <div class="container-xxl py-6 py-lg-10" v-if="QuestionFour">
+          <div class="container-xxl py-6 py-lg-10" v-if="pickup">
             <div class="message">
               <a
                 class="avatar avatar-sm mr-4 mr-lg-5"
                 href="#"
                 data-chat-sidebar-toggle="#chat-1-user-profile"
               >
-                <img class="avatar-img" src="assets/images/mom.png" alt="" />
+                <img class="avatar-img" src="assets/images/friend.png" alt="" />
               </a>
               <div class="message-body">
                 <div class="message-row">
                   <div class="d-flex align-items-center">
                     <div class="message-content bg-light">
-                      <h6 class="mb-2">Mom</h6>
+                      <h6 class="mb-2">Friend</h6>
+                      <div>Hi {{ user.firstName }}</div>
+
+                      <div class="mt-1">
+                        <small class="opacity-65">1 min ago</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+                <img
+                  class="avatar-img"
+                  src="assets/images/happiness.png"
+                  alt=""
+                />
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">{{ user.firstName }}</h6>
                       <div>
-                        Well, earlier today I got a call from your teacher. She
-                        told me that if you don’t pull up your socks in next
-                        coming months, you certainly will not make it to grade
-                        12!
+                        Dude, you won’t believe what happened?! My mom asked me
+                        about the cigarette smell on my uniform and I
+                        ............
                       </div>
 
                       <div class="mt-1">
@@ -413,6 +121,7 @@
                 </div>
               </div>
             </div>
+            <!-- Divider -->
             <div class="message-divider my-9 mx-lg-5">
               <div class="row align-items-center">
                 <div class="col">
@@ -421,47 +130,7 @@
 
                 <div class="col-auto">
                   <small class="text-muted"
-                    >{{ user.firstName }} fiddles with hands</small
-                  >
-                </div>
-
-                <div class="col">
-                  <hr />
-                </div>
-              </div>
-            </div>
-            <div class="message message-right">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-                <img class="avatar-img" src="assets/images/mom.png" alt="" />
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center justify-content-end">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">Mom</h6>
-                      <a href="#">
-                        I told your dad about what’s happening, and he will be
-                        coming with me to the parent teacher meeting.
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="message-divider my-9 mx-lg-5">
-              <div class="row align-items-center">
-                <div class="col">
-                  <hr />
-                </div>
-
-                <div class="col-auto">
-                  <small class="text-muted"
-                    >{{ user.firstName }}, Mom is waiting for you to respond.
-                    Choose one option</small
+                    >What did you tell her? Choose one option</small
                   >
                 </div>
 
@@ -482,9 +151,8 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option A</h6>
-                      <a href="#" @click="QuestionFourResponse('Option A')">
-                        Look mom, there was really no need to involve dad. It’s
-                        not like he cares about me anyway.
+                      <a href="#" @click="QuestionOneResponse('Lied')">
+                        Lied to her
                       </a>
                     </div>
                   </div>
@@ -503,10 +171,135 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option B</h6>
-                      <a href="#" @click="QuestionFourResponse('Option B')">
-                        Look mom, this teacher doesn’t really know how to
-                        explain things properly. I’m even not the only one
-                        struggling in their class.
+                      <a href="#" @click="QuestionOneResponse('Truth')">
+                        Told her the truth
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-xxl py-6 py-lg-10" v-if="conversationOne">
+            <div class="message">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+                <img
+                  class="avatar-img"
+                  src="assets/images/happiness.png"
+                  alt=""
+                />
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">{{ user.firstName }}</h6>
+                      <div>
+                        she was very suspicious. I barely got away with it.
+                        Anyway, I’ve been stressed about the matric dance/prom
+                        next year. The financial situation at home is bad and I
+                        don’t think my mom will be able to afford it. It going
+                        to be so embarrassing if I’m the only one left out!
+                      </div>
+
+                      <div class="mt-1">
+                        <small class="opacity-65">1 min ago</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+                <img class="avatar-img" src="assets/images/friend.png" alt="" />
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Friend</h6>
+                      <div>
+                        Babe, you do know that there are old men out there
+                        looking to date young ladies like us?! And apparently,
+                        they have friendly pockets too! This can totally be a
+                        quick way to make money! Within 6 months you will have
+                        made more than enough money for the Matric dance.
+                        Imagine us wearing those red bottoms!!!
+                      </div>
+
+                      <div class="mt-1">
+                        <small class="opacity-65">1 min ago</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Divider -->
+            <div class="message-divider my-9 mx-lg-5">
+              <div class="row align-items-center">
+                <div class="col">
+                  <hr />
+                </div>
+
+                <div class="col-auto">
+                  <small class="text-muted"
+                    >What are you going to do? Choose one option</small
+                  >
+                </div>
+
+                <div class="col">
+                  <hr />
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option A</h6>
+                      <a href="#" @click="QuestionTwoResponse('Option A')">
+                        No dude I can’t do that! I’ll just have to get a part
+                        time job or something, especially during school
+                        holidays.
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option B</h6>
+                      <a href="#" @click="QuestionTwoResponse('Option B')">
+                        That actually a good idea. In fact, I know a club we can
+                        go to meet a few nice men with money.
                       </a>
                     </div>
                   </div>
@@ -525,9 +318,9 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option C</h6>
-                      <a href="#" @click="QuestionFourResponse('Option C')">
-                        I have been struggling and I’m thinking of enrolling for
-                        extra classes.
+                      <a href="#" @click="QuestionTwoResponse('Option C')">
+                        Gosh I really don’t know what to do! My life sucks, its
+                        unfair and there is nothing much I can do about it.
                       </a>
                     </div>
                   </div>
@@ -535,32 +328,8 @@
               </div>
             </div>
           </div>
-          <div class="container-xxl py-6 py-lg-10" v-if="FourResponse">
-            <div class="message">
-              <a
-                class="avatar avatar-sm mr-4 mr-lg-5"
-                href="#"
-                data-chat-sidebar-toggle="#chat-1-user-profile"
-              >
-                <img class="avatar-img" src="assets/images/mom.png" alt="" />
-              </a>
-              <div class="message-body">
-                <div class="message-row">
-                  <div class="d-flex align-items-center">
-                    <div class="message-content bg-light">
-                      <h6 class="mb-2">Mom</h6>
-                      <div>
-                        {{ FourResponse }}
-                      </div>
-
-                      <div class="mt-1">
-                        <small class="opacity-65">1 min ago</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="container-xxl py-6 py-lg-10" v-if="conversationOneOptions">
+            <!-- Divider -->
             <div class="message-divider my-9 mx-lg-5">
               <div class="row align-items-center">
                 <div class="col">
@@ -569,8 +338,8 @@
 
                 <div class="col-auto">
                   <small class="text-muted"
-                    >{{ user.firstName }} leaves the kitchen
-                  </small>
+                    >What do you think could possibly happens next because of this decision?</small
+                  >
                 </div>
 
                 <div class="col">
@@ -578,19 +347,233 @@
                 </div>
               </div>
             </div>
-            <a
-              href="#"
-              @click="CompleteScence()"
-              class="btn btn-primary mt-2 text-center"
-              >Continue</a
-            >
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option A</h6>
+                      <a href="#" @click="ActionResponse('Drop out of school')">
+                        Drop out of school
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option B</h6>
+                      <a href="#" @click="ActionResponse('Become sexually active and can get pregnant')">
+                        Become sexually active and can get pregnant
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option C</h6>
+                      <a href="#" @click="ActionResponse('Contract STDs or HIV')">
+                        Contract STDs or HIV
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option D</h6>
+                      <a href="#" @click="ActionResponse('Become unmotivated and pessimistic')">
+                        Become unmotivated and pessimistic
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option E</h6>
+                      <a href="#" @click="ActionResponse('Get bad grades and fail')">
+                        Get bad grades and fail
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option F</h6>
+                      <a href="#" @click="ActionResponse('Can get drugged and assaulted or trafficked')">
+                        Can get drugged and assaulted or trafficked
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option G</h6>
+                      <a href="#" @click="ActionResponse('Develop marketable skills')">
+                        Develop marketable skills
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option H</h6>
+                      <a href="#" @click="ActionResponse('Improve chances of getting a good job in the future')">
+                        Improve chances of getting a good job in the future
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option I</h6>
+                      <a href="#" @click="ActionResponse('Become at risk for depression')">
+                        Become at risk for depression
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option J</h6>
+                      <a href="#" @click="ActionResponse('Overeat and become overweight')">
+                        Overeat and become overweight
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message message-right">
+              <a
+                class="avatar avatar-sm mr-4 mr-lg-5"
+                href="#"
+                data-chat-sidebar-toggle="#chat-1-user-profile"
+              >
+              </a>
+              <div class="message-body">
+                <div class="message-row">
+                  <div class="d-flex align-items-center justify-content-end">
+                    <div class="message-content bg-light">
+                      <h6 class="mb-2">Option K</h6>
+                      <a href="#" @click="ActionResponse('Become more confident')">
+                        Become more confident
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="container-xxl py-6 py-lg-10" v-if="reward">
-            <div class="container my-9 mx-lg-5">
+          <div class="container-xxl py-6 py-lg-10" v-if="action">
+            <div class="container my-9 mx-lg-5" v-if="action.actionType === 'Develop marketable skills' || action.actionType === 'Become more confident'">
               <div class="row align-items-center">
                 <div class="avatar avatar-xl mb-5">
                   <lottie-animation
-                    path="assets/lottie/congratulations.json"
+                    path="assets/lottie/happy.json"
                     class="avatar-img"
                   />
                 </div>
@@ -600,26 +583,44 @@
 
                 <div class="col-auto">
                   <small class="text-muted text-center"
-                    >Congratulations {{ user.firstName }}, You've earned
-                    yourself a {{ reward.rewardType }} badge
+                    >Hi {{ user.firstName }}, We believe you took the right decision. You've earned an advisor badge on our platform. 
+                    We belive you will help your peers to take the right decision.
                   </small>
                 </div>
 
                 <div class="col">
                   <hr />
                 </div>
+              </div>
+            </div>
+            <div class="container my-9 mx-lg-5" v-else>
+              <div class="row align-items-center">
                 <div class="avatar avatar-xl mb-5">
                   <lottie-animation
-                    path="assets/lottie/badge.json"
+                    path="assets/lottie/sad.json"
                     class="avatar-img"
                   />
+                </div>
+                <div class="col">
+                  <hr />
+                </div>
+
+                <div class="col-auto">
+                  <small class="text-muted text-center"
+                    >Hi {{ user.firstName }}, We want to help you evaluate your decision. Please seek professional help or not to someone who 
+                    will help you make better decisions
+                  </small>
+                </div>
+
+                <div class="col">
+                  <hr />
                 </div>
               </div>
             </div>
             <a
-              href="/scene-two"
+              href="/"
               class="btn btn-primary mt-2 text-center"
-              >Continue to Scene two</a
+              >Go Back Home</a
             >
           </div>
         </div>
@@ -634,90 +635,50 @@ import { REST_API_URI } from "../config/keys";
 import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
 export default {
   props: ["user"],
+  data() {
+    return {
+      Welcome: true,
+      pickup: false,
+      conversationOne: false,
+      conversationOneOptions: false,
+      action: null
+    };
+  },
   components: {
     LottieAnimation,
   },
-  data() {
-    return {
-      QuestionOne: true,
-      QuestionTwo: false,
-      QuestionThree: false,
-      ThreeResponse: null,
-      QuestionFour: false,
-      FourResponse: null,
-      risky_behaviour: false,
-      reward: null,
-    };
-  },
   methods: {
-    chooseInterest() {
-      this.risky_behaviour = true;
-      this.QuestionOne = false;
-      this.QuestionTwo = true;
+    GoToConverstaion() {
+      this.Welcome = false;
+      this.pickup = true;
     },
-    GoQuestionThree() {
-      this.risky_behaviour = true;
-      this.QuestionOne = false;
-      this.QuestionTwo = false;
-      this.QuestionThree = true;
-    },
-    QuestionThreeResponse(val) {
-      this.risky_behaviour = true;
-      this.QuestionOne = false;
-      this.QuestionTwo = false;
-      this.QuestionThree = false;
-      if (val === "Option A") {
-        this.ThreeResponse = "You better not be lying to me.";
-      } else {
-        this.ThreeResponse =
-          "Child! I’m stressed out too, but have you seen me smoke!? What do know about stress anyway?! This better be the first and last time!";
-      }
-    },
-    GoQuestionFour() {
-      this.risky_behaviour = true;
-      this.QuestionOne = false;
-      this.QuestionTwo = false;
-      this.QuestionThree = false;
-      this.ThreeResponse = null;
-      this.QuestionFour = true;
-    },
-    QuestionFourResponse(val) {
-      this.risky_behaviour = true;
-      this.QuestionOne = false;
-      this.QuestionTwo = false;
-      this.QuestionThree = false;
-      this.ThreeResponse = null;
-      this.QuestionFour = false;
-      if (val === "Option A") {
-        this.FourResponse =
-          "Whatever the case, he is still your father and you need to respect him!";
-      } else if (val === "Option B") {
-        this.FourResponse =
-          "Whatever the case, we will find out when we get there!";
-      } else if (val === "Option C") {
-        this.FourResponse =
-          "Okay child let me know how you think I can help you going forward.";
-      }
-    },
-    CompleteScence() {
-      let token = this.$store.state.auth.token;
-      console.log(token);
+    QuestionOneResponse(val) {
       axios({
-        url: `${REST_API_URI}/api/accounts/getRewards`,
-        headers: { Authorization: "Bearer " + token },
-        data: { rewardType: "Silver" },
+        url: `${REST_API_URI}/api/accounts/postResponse`,
+        data: { responseType: val },
         method: "POST",
       }).then((res) => {
-        this.reward = res.data.reward;
-        this.risky_behaviour = true;
-        this.QuestionOne = false;
-        this.QuestionTwo = false;
-        this.QuestionThree = false;
-        this.ThreeResponse = null;
-        this.QuestionFour = false;
-        this.FourResponse = null;
+        console.log(res);
+        this.conversationOne = true;
+        this.Welcome = false;
+        this.pickup = false;
       });
     },
+    QuestionTwoResponse() {
+      this.conversationOneOptions = true
+      this.conversationOne = false;
+      this.Welcome = false;
+      this.pickup = false;
+    },
+    ActionResponse(val) {
+        axios({ url: `${REST_API_URI}/api/accounts/actionResponse`, method: 'POST', data: { 'actionType': val } }).then((res) => {
+            this.action = res.data.action
+            this.conversationOneOptions = false;
+      this.conversationOne = false;
+      this.Welcome = false;
+      this.pickup = false;
+        })
+    }
   },
 };
 </script>
