@@ -328,7 +328,10 @@
               </div>
             </div>
           </div>
-          <div class="container-xxl py-6 py-lg-10" v-if="conversationOneOptions">
+          <div
+            class="container-xxl py-6 py-lg-10"
+            v-if="conversationOneOptions"
+          >
             <!-- Divider -->
             <div class="message-divider my-9 mx-lg-5">
               <div class="row align-items-center">
@@ -338,7 +341,8 @@
 
                 <div class="col-auto">
                   <small class="text-muted"
-                    >What do you think could possibly happens next because of this decision?</small
+                    >What do you think could possibly happens next because of
+                    this decision?</small
                   >
                 </div>
 
@@ -379,7 +383,14 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option B</h6>
-                      <a href="#" @click="ActionResponse('Become sexually active and can get pregnant')">
+                      <a
+                        href="#"
+                        @click="
+                          ActionResponse(
+                            'Become sexually active and can get pregnant'
+                          )
+                        "
+                      >
                         Become sexually active and can get pregnant
                       </a>
                     </div>
@@ -399,7 +410,10 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option C</h6>
-                      <a href="#" @click="ActionResponse('Contract STDs or HIV')">
+                      <a
+                        href="#"
+                        @click="ActionResponse('Contract STDs or HIV')"
+                      >
                         Contract STDs or HIV
                       </a>
                     </div>
@@ -419,7 +433,12 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option D</h6>
-                      <a href="#" @click="ActionResponse('Become unmotivated and pessimistic')">
+                      <a
+                        href="#"
+                        @click="
+                          ActionResponse('Become unmotivated and pessimistic')
+                        "
+                      >
                         Become unmotivated and pessimistic
                       </a>
                     </div>
@@ -439,7 +458,10 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option E</h6>
-                      <a href="#" @click="ActionResponse('Get bad grades and fail')">
+                      <a
+                        href="#"
+                        @click="ActionResponse('Get bad grades and fail')"
+                      >
                         Get bad grades and fail
                       </a>
                     </div>
@@ -459,7 +481,14 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option F</h6>
-                      <a href="#" @click="ActionResponse('Can get drugged and assaulted or trafficked')">
+                      <a
+                        href="#"
+                        @click="
+                          ActionResponse(
+                            'Can get drugged and assaulted or trafficked'
+                          )
+                        "
+                      >
                         Can get drugged and assaulted or trafficked
                       </a>
                     </div>
@@ -479,7 +508,10 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option G</h6>
-                      <a href="#" @click="ActionResponse('Develop marketable skills')">
+                      <a
+                        href="#"
+                        @click="ActionResponse('Develop marketable skills')"
+                      >
                         Develop marketable skills
                       </a>
                     </div>
@@ -499,7 +531,14 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option H</h6>
-                      <a href="#" @click="ActionResponse('Improve chances of getting a good job in the future')">
+                      <a
+                        href="#"
+                        @click="
+                          ActionResponse(
+                            'Improve chances of getting a good job in the future'
+                          )
+                        "
+                      >
                         Improve chances of getting a good job in the future
                       </a>
                     </div>
@@ -519,7 +558,10 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option I</h6>
-                      <a href="#" @click="ActionResponse('Become at risk for depression')">
+                      <a
+                        href="#"
+                        @click="ActionResponse('Become at risk for depression')"
+                      >
                         Become at risk for depression
                       </a>
                     </div>
@@ -539,7 +581,10 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option J</h6>
-                      <a href="#" @click="ActionResponse('Overeat and become overweight')">
+                      <a
+                        href="#"
+                        @click="ActionResponse('Overeat and become overweight')"
+                      >
                         Overeat and become overweight
                       </a>
                     </div>
@@ -559,7 +604,10 @@
                   <div class="d-flex align-items-center justify-content-end">
                     <div class="message-content bg-light">
                       <h6 class="mb-2">Option K</h6>
-                      <a href="#" @click="ActionResponse('Become more confident')">
+                      <a
+                        href="#"
+                        @click="ActionResponse('Become more confident')"
+                      >
                         Become more confident
                       </a>
                     </div>
@@ -569,7 +617,13 @@
             </div>
           </div>
           <div class="container-xxl py-6 py-lg-10" v-if="action">
-            <div class="container my-9 mx-lg-5" v-if="action.actionType === 'Develop marketable skills' || action.actionType === 'Become more confident'">
+            <div
+              class="container my-9 mx-lg-5"
+              v-if="
+                action.actionType === 'Develop marketable skills' ||
+                  action.actionType === 'Become more confident'
+              "
+            >
               <div class="row align-items-center">
                 <div class="avatar avatar-xl mb-5">
                   <lottie-animation
@@ -583,8 +637,13 @@
 
                 <div class="col-auto">
                   <small class="text-muted text-center"
-                    >Hi {{ user.firstName }}, We believe you took the right decision. You've earned an advisor badge on our platform. 
-                    We belive you will help your peers to take the right decision.
+                    >Hi {{ user.firstName }}, Based on the decision you made,
+                    you show signs of a person with sense of ownership and
+                    responsibility toward life. Getting a part-time job to save
+                    up for the matric dance will give you more than just money.
+                    It can also give you useful marketable skills such as
+                    improving your communication and it can also instil
+                    confidence, sense of responsibility and independence.
                   </small>
                 </div>
 
@@ -607,8 +666,12 @@
 
                 <div class="col-auto">
                   <small class="text-muted text-center"
-                    >Hi {{ user.firstName }}, We want to help you evaluate your decision. Please seek professional help or not to someone who 
-                    will help you make better decisions
+                    >Hi {{ user.firstName }}, Based on the you made, you show
+                    signs of a person who often feels hopeless and unmotivated
+                    about their life. Did you know that apathy is a disorder of
+                    motivation and it is associated with lower quality of life?
+                    Which also means that you have more time to engage in
+                    unsustainable and risky behaviours.
                   </small>
                 </div>
 
@@ -617,9 +680,7 @@
                 </div>
               </div>
             </div>
-            <a
-              href="/"
-              class="btn btn-primary mt-2 text-center"
+            <a href="/" class="btn btn-primary mt-2 text-center"
               >Go Back Home</a
             >
           </div>
@@ -641,7 +702,7 @@ export default {
       pickup: false,
       conversationOne: false,
       conversationOneOptions: false,
-      action: null
+      action: null,
     };
   },
   components: {
@@ -665,20 +726,24 @@ export default {
       });
     },
     QuestionTwoResponse() {
-      this.conversationOneOptions = true
+      this.conversationOneOptions = true;
       this.conversationOne = false;
       this.Welcome = false;
       this.pickup = false;
     },
     ActionResponse(val) {
-        axios({ url: `${REST_API_URI}/api/accounts/actionResponse`, method: 'POST', data: { 'actionType': val } }).then((res) => {
-            this.action = res.data.action
-            this.conversationOneOptions = false;
-      this.conversationOne = false;
-      this.Welcome = false;
-      this.pickup = false;
-        })
-    }
+      axios({
+        url: `${REST_API_URI}/api/accounts/actionResponse`,
+        method: "POST",
+        data: { actionType: val },
+      }).then((res) => {
+        this.action = res.data.action;
+        this.conversationOneOptions = false;
+        this.conversationOne = false;
+        this.Welcome = false;
+        this.pickup = false;
+      });
+    },
   },
 };
 </script>

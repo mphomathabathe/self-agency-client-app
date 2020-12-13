@@ -31,41 +31,14 @@
                   <div class="card-body">
                     <div class="media">
                       <div class="avatar mr-5">
-                        <img
+                        <lottie-animation
+                          path="assets/lottie/list.json"
                           class="avatar-img"
-                          src="https://image.flaticon.com/icons/png/512/30/30609.png"
                         />
                       </div>
 
                       <div class="media-body align-self-center">
                         <h6 class="mb-0">Select topic of interest</h6>
-                      </div>
-                      <div class="align-self-center ml-5">
-                        <div class="dropdown z-index-max">
-                          <a
-                            href="#"
-                            class="btn btn-sm btn-ico btn-link text-muted w-auto"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <i class="fe-more-vertical"></i>
-                          </a>
-                          <div class="dropdown-menu">
-                            <a
-                              class="dropdown-item d-flex align-items-center"
-                              href="#"
-                            >
-                              New chat <span class="ml-auto fe-edit-2"></span>
-                            </a>
-                            <a
-                              class="dropdown-item d-flex align-items-center"
-                              href="#"
-                            >
-                              Delete <span class="ml-auto fe-trash-2"></span>
-                            </a>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -227,22 +200,22 @@
                 <i class="fe-users ml-auto"></i>
               </button>
               <div
-                  class="card mb-6"
-                  v-for="(question, index) in questions"
-                  :key="index"
-                >
-                  <div class="card-body">
-                    <div class="media">
-                      <div class="media-body align-self-center">
-                        <h6 class="mb-0">{{ question.text }}</h6>
-                        <p class="small text-danger mt-2">
-                          Posted On:
-                          {{ question.createdAt | moment("MMMM Do YYYY") }}
-                        </p>
-                      </div>
+                class="card mb-6"
+                v-for="(question, index) in questions"
+                :key="index"
+              >
+                <div class="card-body">
+                  <div class="media">
+                    <div class="media-body align-self-center">
+                      <h6 class="mb-0">{{ question.text }}</h6>
+                      <p class="small text-danger mt-2">
+                        Posted On:
+                        {{ question.createdAt | moment("MMMM Do YYYY") }}
+                      </p>
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
@@ -261,7 +234,7 @@ export default {
     return {
       rewards: null,
       peers: null,
-      questions: null
+      questions: null,
     };
   },
   components: {
@@ -286,15 +259,18 @@ export default {
       );
     },
     getQuestions() {
-        axios({ url: `${REST_API_URI}/api/peers/getQuestions`, method: 'GET' }).then((res) => {
-            this.questions = res.data.questions
-        })
-    }
+      axios({
+        url: `${REST_API_URI}/api/peers/getQuestions`,
+        method: "GET",
+      }).then((res) => {
+        this.questions = res.data.questions;
+      });
+    },
   },
   mounted() {
     this.getMyRewards();
     this.getPeers();
-    this.getQuestions()
+    this.getQuestions();
   },
 };
 </script>

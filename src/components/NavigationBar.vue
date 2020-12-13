@@ -69,11 +69,8 @@
       </li>
       <li class="nav-item mt-xl-9">
         <a
-          class="nav-link position-relative p-0 py-xl-3"
-          data-toggle="tab"
-          href="#tab-content-analytics"
+          href="/analytics"
           title="Analytics"
-          role="tab"
         >
           <i class="icon-lg fe-pie-chart"></i>
         </a>
