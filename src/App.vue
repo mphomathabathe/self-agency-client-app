@@ -3,6 +3,7 @@
     <navigation-bar v-if="isLoggedIn && user" />
     <top-navigation v-if="isLoggedIn && user" :user="user"/>
     <router-view :user="user" />
+    <ask-a-peer />
   </div>
 </template>
 
@@ -10,10 +11,12 @@
 import { mapGetters, mapActions } from "vuex";
 import NavigationBar from "@/components/NavigationBar";
 import TopNavigation from './components/TopNavigation.vue';
+import AskAPeer from './components/AskAPeer.vue';
 export default {
   components: {
     NavigationBar,
-    TopNavigation
+    TopNavigation,
+    AskAPeer
   },
   computed: {
     ...mapGetters(["isLoggedIn"]),
@@ -28,6 +31,9 @@ export default {
       this.user = null;
       this.logout();
     },
+    openAskPeerModal() {
+      window.$("#remove-employee").modal("show")
+    }
   },
   mounted() {
     if (this.isLoggedIn) {

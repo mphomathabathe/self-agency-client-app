@@ -11,7 +11,8 @@
           The journey to self-efficacy or change agency starts with the individual selecting a topic of interest
         </p>
         <a 
-          href="/chat" class="btn btn-primary" @click="goToHome()">Select a topic of interest</a>
+          data-toggle="tab"
+          href="#tab-content-home" class="btn btn-primary" @click="goToHome()">Get Started</a>
       </div>
     </div>
   </div>
